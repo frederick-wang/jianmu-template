@@ -5,11 +5,11 @@
   "description": "Create a app with python and electron.",
   "main": ".jianmu/electron/main.js",
   "scripts": {
-    "dev": "cross-env DEBUGGING=true node scripts/dev-server.js && npm run clean",
-    "build": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json && npm run clean",
-    "build:win": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --win && npm run clean",
-    "build:mac": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --mac && npm run clean",
-    "build:linux": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --linux && npm run clean",
+    "dev": "cross-env DEBUGGING=true node scripts/dev-server.js",
+    "build": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json",
+    "build:win": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --win",
+    "build:mac": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --mac",
+    "build:linux": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --linux",
     "clean": "rimraf .jianmu"
   },
   "repository": {
