@@ -32,8 +32,9 @@ async function startElectron() {
   }
 
   try {
-    await compileTs(Path.join(__dirname, 'electron'))
-  } catch {
+    const electronScriptsDir = Path.join(__dirname, 'electron')
+    await compileTs(electronScriptsDir)
+  } catch (e) {
     console.log(
       Chalk.redBright(
         'Could not start Electron because of the above typescript error(s).'
@@ -95,6 +96,7 @@ function copy(path) {
 }
 
 function stop() {
+  console.log(Chalk.redBright('Stop Electron + Vite Dev Server...'))
   viteServer.close()
   process.exit()
 }

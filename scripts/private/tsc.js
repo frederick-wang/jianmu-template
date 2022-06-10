@@ -3,7 +3,7 @@ const Chalk = require('chalk')
 
 function compile(directory) {
   return new Promise((resolve, reject) => {
-    const tscProcess = ChildProcess.exec('tsc', {
+    const tscProcess = ChildProcess.exec('npx tsc', {
       cwd: directory
     })
 
