@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Jianmu
+.jianmu
+__pycache__
+build
+out
+
+# VS Code
+.vscode

@@ -1,0 +1,56 @@
+{
+  "name": "jianmu",
+  "productName": "Jianmu",
+  "version": "0.0.1",
+  "description": "Create a app with python and electron.",
+  "main": ".jianmu/electron/main.js",
+  "scripts": {
+    "dev": "cross-env DEBUGGING=true node scripts/dev-server.js && npm run clean",
+    "build": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json && npm run clean",
+    "build:win": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --win && npm run clean",
+    "build:mac": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --mac && npm run clean",
+    "build:linux": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --linux && npm run clean",
+    "clean": "rimraf .jianmu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frederick-wang/jianmu-template.git"
+  },
+  "author": "Zhaoji Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frederick-wang/jianmu-template/issues"
+  },
+  "homepage": "https://github.com/frederick-wang/jianmu-template#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "element-plus": "^2.2.4",
+    "got": "^11.8.5",
+    "hotkeys-js": "^3.9.4",
+    "ky": "^0.30.0",
+    "vue": "^3.2.36"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/cli": "^5.0.4",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "cross-env": "^7.0.3",
+    "electron": "^19.0.3",
+    "electron-builder": "^23.0.3",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.1.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.52.2",
+    "typescript": "^4.7.3",
+    "vite": "^2.9.9",
+    "vite-plugin-html": "^3.2.0",
+    "vue-eslint-parser": "^9.0.2"
+  }
+}
