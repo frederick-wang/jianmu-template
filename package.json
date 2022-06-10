@@ -1,8 +1,8 @@
 {
-  "name": "jianmu",
-  "productName": "Jianmu",
+  "name": "jianmu-template",
+  "productName": "Jianmu Template",
   "version": "0.0.1",
-  "description": "Create a app with python and electron.",
+  "description": "The project template of Jianmu Framework.",
   "main": ".jianmu/electron/main.js",
   "scripts": {
     "dev": "cross-env DEBUGGING=true node scripts/dev-server.js",
