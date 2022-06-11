@@ -4,7 +4,11 @@ import WindowContent from './WindowContent.vue'
 
 <template>
   <div class="window-container">
-    <el-scrollbar> <WindowContent /></el-scrollbar>
+    <el-scrollbar>
+      <Suspense>
+        <WindowContent />
+      </Suspense>
+    </el-scrollbar>
   </div>
 </template>
 
