@@ -1,6 +1,14 @@
-import { app, BrowserWindow, ipcMain, Menu } from 'electron'
+import {
+  app,
+  BrowserWindow,
+  ipcMain,
+  Menu,
+  OpenDialogOptions,
+  SaveDialogOptions
+} from 'electron'
 import { join } from 'path'
 import got from 'got'
+import { dialog } from 'electron'
 
 Menu.setApplicationMenu(null)
 
@@ -98,5 +106,17 @@ ipcMain.handle('invoke-python', async (_, method: string, ...args: any[]) => {
       message: e.message,
       data: null
     }
+  }
+})
+
+ipcMain.handle('show-open-dialog', (_, options: OpenDialogOptions) => {
+  if (mainWindow) {
+    return dialog.showOpenDialog(mainWindow, options)
+  }
+})
+
+ipcMain.handle('show-save-dialog', (_, options: SaveDialogOptions) => {
+  if (mainWindow) {
+    return dialog.showSaveDialog(mainWindow, options)
   }
 })

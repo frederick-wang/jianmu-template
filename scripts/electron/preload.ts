@@ -1,4 +1,11 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import {
+  contextBridge,
+  ipcRenderer,
+  OpenDialogOptions,
+  OpenDialogReturnValue,
+  SaveDialogOptions,
+  SaveDialogReturnValue
+} from 'electron'
 
 interface PythonResponse<T = any> {
   error: number
@@ -18,7 +25,17 @@ const api = {
   invokePython: <T = any>(method: string, ...args: any[]) =>
     ipcRenderer.invoke('invoke-python', method, ...args) as Promise<
       PythonResponse<T>
-    >
+    >,
+  showOpenDialog: (options: OpenDialogOptions) =>
+    ipcRenderer.invoke(
+      'show-open-dialog',
+      options
+    ) as Promise<OpenDialogReturnValue>,
+  showSaveDialog: (options: SaveDialogOptions) =>
+    ipcRenderer.invoke(
+      'show-save-dialog',
+      options
+    ) as Promise<SaveDialogReturnValue>
 }
 
 type API = typeof api
