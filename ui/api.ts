@@ -9,7 +9,9 @@ const {
   reload,
   forceReload,
   quit,
-  invokePython: invokePythonHandler
+  invokePython: invokePythonHandler,
+  showOpenDialog,
+  showSaveDialog
 } = window.api
 
 const invokePython = async <T = any>(command: string, ...args: any[]) => {
@@ -39,5 +41,7 @@ export {
   toggleMaximize,
   reload,
   forceReload,
-  quit
+  quit,
+  showOpenDialog,
+  showSaveDialog
 }
