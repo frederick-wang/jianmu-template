@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Menubar from './Menubar.vue'
-import { minimize, toggleMaximize, close, isMaximized } from '../api'
+import { api } from 'jianmu'
+
+const { minimize, toggleMaximize, close, isMaximized } = api
 </script>
 
 <template>

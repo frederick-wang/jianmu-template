@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import hotkeys from 'hotkeys-js'
-import { isMenuActive, forceReload, openDevtools, reload, quit } from '../api'
+import { api } from 'jianmu'
+
+const { isMenuActive, forceReload, openDevtools, reload, quit } = api
 
 hotkeys('Ctrl+W, Command+W', (e) => {
   e.preventDefault()

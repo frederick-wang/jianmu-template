@@ -38,8 +38,4 @@ const api = {
     ) as Promise<SaveDialogReturnValue>
 }
 
-type API = typeof api
-
 contextBridge.exposeInMainWorld('api', api)
-
-export { API, PythonResponse }

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { invokePython } from '../api'
+import { api } from 'jianmu'
 
 const msg = ref('点击下面的按钮试试')
 
 async function getMsg() {
-  msg.value = await invokePython('hello', 'World')
+  msg.value = await api.invokePython('hello', 'World')
 }
 </script>
 
