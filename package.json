@@ -1,17 +1,8 @@
 {
   "name": "jianmu-template",
   "productName": "Jianmu Template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The project template of Jianmu Framework.",
-  "main": ".jianmu/electron/main.js",
-  "scripts": {
-    "dev": "cross-env DEBUGGING=true node scripts/dev-server.js",
-    "build": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json",
-    "build:win": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --win",
-    "build:mac": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --mac",
-    "build:linux": "node scripts/build.js && cross-env ELECTRON_MIRROR=\"https://npmmirror.com/mirrors/electron/\" electron-builder -c config/electron-builder.json --linux",
-    "clean": "rimraf .jianmu"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frederick-wang/jianmu-template.git"
@@ -30,7 +21,7 @@
     "element-plus": "^2.2.4",
     "got": "^11.8.5",
     "hotkeys-js": "^3.9.4",
-    "jianmu": "^0.0.1",
+    "jianmu": "^0.0.5",
     "ky": "^0.30.0",
     "vue": "^3.2.36"
   },

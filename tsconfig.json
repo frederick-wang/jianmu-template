@@ -1,0 +1,12 @@
+{
+  "extends": "jianmu/tsconfig-preset-ui",
+  "compilerOptions": {
+    "baseUrl": "ui"
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.vue"
+  ]
+}

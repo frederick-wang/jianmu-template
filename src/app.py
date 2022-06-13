@@ -1,2 +1,2 @@
-def hello(target):
-    return f'Hello, {target}!'
+def say_hello(name):
+    return f'Hello, {name}!'
