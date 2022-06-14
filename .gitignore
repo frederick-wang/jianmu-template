@@ -108,6 +108,3 @@ dist
 __pycache__
 build
 out
-
-# VS Code
-.vscode
