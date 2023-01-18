@@ -15,7 +15,7 @@
   "homepage": "https://github.com/frederick-wang/jianmu-template#readme",
   "dependencies": {
     "element-plus": "^2.2.4",
-    "jianmu": "^0.0.7",
+    "jianmu": "file:../jianmu-js",
     "vue": "^3.2.36"
   },
   "devDependencies": {
