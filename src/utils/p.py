@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from reactivity import computed, ref
 
 apple_count = ref(40)
+plot_title = ref('Fruit supply by kind and color')
 
 
 def fig_b64_update():
@@ -18,7 +19,7 @@ def fig_b64_update():
     ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
 
     ax.set_ylabel('fruit supply')
-    ax.set_title('Fruit supply by kind and color')
+    ax.set_title(plot_title.value)
     ax.legend(title='Fruit color')
 
     # convert plot to base64
