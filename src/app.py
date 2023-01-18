@@ -1,5 +1,6 @@
-from jianmu import ref, computed
+from reactivity import ref, computed
 from ltp import LTP
+from .p import fig_b64, apple_count
 
 ltp = LTP()
 
@@ -15,7 +16,9 @@ result = computed(lambda: {
 
 def add_count():
     count.value += 1
+    print(f'count is {count.value} now')
+
 
 sentence = ref('他叫汤姆去拿外衣')
 
-sent_split = computed(lambda: ltp.pipeline([str(sentence.value)], tasks = ["cws"], return_dict = False)[0])
+sent_split = computed(lambda: ltp.pipeline([str(sentence.value)], tasks=["cws"], return_dict=False)[0])
