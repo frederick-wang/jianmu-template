@@ -1,5 +1,4 @@
-import base64
-import io
+from jianmu import figure_to_datauri
 
 import matplotlib.pyplot as plt
 from reactivity import computed, ref
@@ -22,13 +21,7 @@ def fig_b64_update():
     ax.set_title(plot_title.value)
     ax.legend(title='Fruit color')
 
-    # convert plot to base64
-    fig_bytes = io.BytesIO()
-    fig.savefig(fig_bytes, format='png')
-    fig_bytes.seek(0)
-    fig_b64 = 'data:image/png;base64,' + base64.b64encode(fig_bytes.read()).decode('utf-8')
-    plt.close()
-    return fig_b64
+    return figure_to_datauri(fig)
 
 
 fig_b64 = computed(fig_b64_update)
