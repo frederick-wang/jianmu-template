@@ -14,8 +14,9 @@
   },
   "homepage": "https://github.com/frederick-wang/jianmu-template#readme",
   "dependencies": {
-    "element-plus": "^2.2.4",
-    "jianmu": "^0.0.7",
+    "@element-plus/icons-vue": "^2.0.10",
+    "element-plus": "^2.2.29",
+    "jianmu": "^0.0.8",
     "vue": "^3.2.36"
   },
   "devDependencies": {
