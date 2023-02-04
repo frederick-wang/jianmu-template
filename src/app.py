@@ -43,19 +43,13 @@ sent_split = computed(getter)
 
 
 def test_message_box():
-
-    def cb(x):
-        print('test_message_box callback:', x)
-
-    show_message_box({'message': 'message', 'type': 'info'}, cb)
+    result = show_message_box({'message': 'message', 'type': 'info'})
+    print('test_message_box result:', result)
 
 
 def test_error_box():
-
-    def cb():
-        print('test_error_box callback')
-
-    show_error_box('error', 'error message', cb)
+    show_error_box('error', 'error message')
+    print('test_error_box has been clicked')
 
 
 def test_beep():
@@ -63,29 +57,24 @@ def test_beep():
 
 
 def test_save_dialog():
-
-    def cb(x):
-        if x['canceled']:
-            return
-        file_path: str = x['filePath']
-        file_path = file_path if file_path.endswith('.txt') else f'{file_path}.txt'
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write('Hello World!')
-
-    show_save_dialog(callback=cb)
+    result = show_save_dialog()
+    if result['canceled']:
+        return
+    file_path: str = result['filePath']
+    file_path = file_path if file_path.endswith('.txt') else f'{file_path}.txt'
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write('Hello World!')
 
 
 test_file_path = ref('')
 
 
 def test_open_dialog():
-
-    def cb(x):
-        if x['canceled']:
-            return
-        test_file_path.value = x['filePaths'][0]
-
-    show_open_dialog(callback=cb)
+    result = show_open_dialog()
+    if result['canceled']:
+        return
+    test_file_path.value = result['filePaths'][0]
+    print(test_file_path.value)
 
 
 def test_show_item_in_folder():
@@ -110,7 +99,8 @@ def test_trash_item():
     if not test_file_path.value:
         show_error_box('错误', 'test_file_path 的值为空')
         return
-    trash_item(test_file_path.value, callback=lambda: show_message_box({'message': f'{test_file_path.value} 已删除'}))
+    trash_item(test_file_path.value)
+    show_message_box({'message': f'{test_file_path.value} 已删除'})
 
 
 file_list = ref([])
