@@ -1,7 +1,7 @@
 {
   "name": "jianmu-template",
   "productName": "Jianmu Template",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The project template of Jianmu Framework.",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "element-plus": "^2.2.29",
-    "jianmu": "^0.0.8",
+    "jianmu": "^0.0.9",
     "vue": "^3.2.36"
   },
   "devDependencies": {
